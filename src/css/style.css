@@ -68,15 +68,11 @@ h1 {
 .input {
   width: 40%;
   height: 10vh;
-  margin-left: 5%;
   text-align: center;
   border-radius: 10px;
 }
 
 .button {
-  width: 10%;
-  height: 11vh;
-  border-radius: 10px;
   background-color: white;
 }
 
@@ -94,6 +90,10 @@ ol {
 /* Titles section start
   */
 
+li {
+  color: white;
+}
+
 .titlesPair {
   width: 70%;
   margin: 2% 15% 0%;
@@ -102,9 +102,103 @@ ol {
 }
 
 .titleComponent {
-  width: auto;
+  width: 50%;
   margin-left: 2%;
+  border: 5px solid;
+}
+.checkboxes {
+  width: 60%;
+  margin-left: 20%;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.feature {
+  width: 40%;
+  margin-right: 5%;
+}
+
+.checkboxes i {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+}
+
+article {
+  position: relative;
+  height: 15vh;
+  font-size: x-large;
+  margin: 1vh;
+  float: left;
+  border: 4px solid #002538;
+  box-sizing: border-box;
+}
+
+article div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease;
+}
+
+article input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked ~ div {
+  background-color: #013a57;
+  color: #fff;
 }
 
 /* Titles section end
   */
+
+/* Winner section start
+   */
+
+a.button1 {
+  padding: 0.5em;
+  border: 0.1em solid #ffffff;
+  width: 10%;
+  height: auto;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: x-large;
+}
+
+#exit {
+  width: auto;
+  display: block;
+  text-align: center;
+  padding: 2em 7em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a.button1:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+@media all and (max-width: 30em) {
+  .button1 {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+/* Winner section end
+   */

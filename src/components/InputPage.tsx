@@ -54,6 +54,12 @@ export default function InputTitles() {
     <Fragment>
       <h1 className="title">Input all the titles</h1>
       <div className="panel">
+        {titles.length > 0 && (
+          // eslint-disable-next-line
+          <a onClick={() => executeSubmission()} className="button1">
+        Submit
+          </a>
+        )}
         <input
           className="input"
           placeholder="Input your titles one at a time"
@@ -71,30 +77,27 @@ export default function InputTitles() {
           }}
         />
         {entry !== "" && (
-          <button
+          // eslint-disable-next-line
+          <a
             onClick={() => {
               if (typeof entry === "string" && entry !== "") {
                 setTitles(() => [...titles, `${entry}`]);
                 setEntry("");
               }
             }}
-            className="button"
+            className="button1"
           >
             Add
-          </button>
+          </a>
         )}
         {titles.length > 0 && (
-          <button
+          // eslint-disable-next-line
+          <a
             onClick={() => setTitles(() => titles.slice(0, titles.length - 1))}
-            className="button"
+            className="button1"
           >
             Undo
-          </button>
-        )}
-        {titles.length > 0 && (
-          <button onClick={() => executeSubmission()} className="button">
-            Submit
-          </button>
+          </a>
         )}
       </div>
       {alert && (
