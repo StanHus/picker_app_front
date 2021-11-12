@@ -59,6 +59,12 @@ export default function InputTitles() {
           placeholder="Input your titles one at a time"
           type="text"
           value={entry}
+          onSubmit={() => {
+            if (typeof entry === "string" && entry !== "") {
+              setTitles(() => [...titles, `${entry}`]);
+              setEntry("");
+            }
+          }}
           onChange={e => {
             setAlert(false);
             setEntry(e.target.value);

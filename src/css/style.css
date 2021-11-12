@@ -91,3 +91,20 @@ ol {
 
 /* Input page end
  */
+/* Titles section start
+  */
+
+.titlesPair {
+  width: 70%;
+  margin: 2% 15% 0%;
+  display: flex;
+  flex-flow: row;
+}
+
+.titleComponent {
+  width: auto;
+  margin-left: 2%;
+}
+
+/* Titles section end
+  */
