@@ -137,7 +137,8 @@ li {
 }
 
 .checkboxes {
-  width: 100%;
+  margin-left: 3vw;
+  width: 90vw;
   display: flex;
   flex-flow: row;
   flex-wrap: nowrap;

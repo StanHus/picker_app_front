@@ -81,7 +81,7 @@ export default function Game() {
                       <span>{list[index]}</span>
                     </div>
                   </article>
-
+                  <p style={{ marginRight: "4vw", textAlign: "center" }}>VS</p>
                   <article className="feature">
                     <input
                       onChange={() => handleChange(index + 1)}
