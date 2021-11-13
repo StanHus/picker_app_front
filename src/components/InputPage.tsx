@@ -31,8 +31,8 @@ export default function InputTitles() {
     if (check(entries.length)) {
       post(titlesJoined);
     } else {
-      setRemove(titles.length - nearestSmallestPowerOf2(titles.length));
-      setAdd(nearestBiggestPowOf2(titles.length) - titles.length + 1);
+      setRemove(entries.length - nearestSmallestPowerOf2(entries.length));
+      setAdd(nearestBiggestPowOf2(entries.length) - entries.length + 1);
       setTimeout(() => {
         setAlert(true);
       }, 1000);
