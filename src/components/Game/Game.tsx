@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import "../../css/style.css";
 import { useState, useEffect } from "react";
 import { put } from "./requests";
-import { getResult, shuffle } from "./functions";
+import { checkSubmission, getResult, shuffle } from "./functions";
 import Winner from "./Winner";
 
 export default function Game() {
@@ -36,9 +36,7 @@ export default function Game() {
   }, []);
 
   const handleSubmit = async () => {
-    console.log(selected);
-    if (selected.length % 2 === 0 || selected.length === 1) {
-      //condition under review
+    if (checkSubmission(selected)) {
       let result = await getResult(list, selected);
       setTimeout(() => {
         put(result, id);

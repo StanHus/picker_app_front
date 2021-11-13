@@ -1,4 +1,4 @@
-import { check } from "./Game/functions";
+import { checkCount } from "./Game/functions";
 import { post } from "./Game/requests";
 import { Fragment, useState } from "react";
 import "../css/style.css";
@@ -28,7 +28,7 @@ export default function InputTitles() {
     let entries = titles.join(",").split(",");
     let titlesJoined = titles.join(",");
 
-    if (check(entries.length)) {
+    if (checkCount(entries.length)) {
       post(titlesJoined);
     } else {
       setRemove(entries.length - nearestSmallestPowerOf2(entries.length));
