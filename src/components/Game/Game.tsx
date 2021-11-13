@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import "../css/style.css";
+import "../../css/style.css";
 import { useState, useEffect } from "react";
 import { put } from "./requests";
 import { getResult, shuffle } from "./functions";

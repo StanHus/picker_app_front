@@ -12,4 +12,19 @@ const put = async (text: string, id: number | undefined) => {
   }
 };
 
-export { put };
+const post = async (titles: string) => {
+  try {
+    await fetch("https://dry-gorge-37048.herokuapp.com/input", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        text: titles,
+      }),
+    });
+    window.location.href = "/game";
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export { put, post };

@@ -22,4 +22,8 @@ const shuffle = (list: string[]) => {
   return list;
 };
 
-export { getResult, shuffle };
+const check = (num: number) => {
+  return Math.log2(num) % 1 === 0 && num > 8 ? true : false;
+};
+
+export { getResult, shuffle, check };

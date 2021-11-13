@@ -1,3 +1,5 @@
+import { check } from "./Game/functions";
+import { post } from "./Game/requests";
 import { Fragment, useState } from "react";
 import "../css/style.css";
 
@@ -23,24 +25,11 @@ export default function InputTitles() {
   }
 
   const executeSubmission = async () => {
-    if (
-      titles.length === 64 ||
-      titles.length === 32 ||
-      titles.length === 16 ||
-      titles.length === 8
-    ) {
-      try {
-        await fetch("https://dry-gorge-37048.herokuapp.com/input", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            text: titles.join(","),
-          }),
-        });
-        window.location.href = "/game";
-      } catch (err) {
-        console.error(err);
-      }
+    let entries = titles.join(",").split(",");
+    let titlesJoined = titles.join(",");
+
+    if (check(entries.length)) {
+      post(titlesJoined);
     } else {
       setRemove(titles.length - nearestSmallestPowerOf2(titles.length));
       setAdd(nearestBiggestPowOf2(titles.length) - titles.length + 1);
@@ -57,12 +46,12 @@ export default function InputTitles() {
         {titles.length > 0 && (
           // eslint-disable-next-line
           <a onClick={() => executeSubmission()} className="button1">
-        Submit
+            Submit
           </a>
         )}
         <input
           className="input"
-          placeholder="Input your titles one at a time"
+          placeholder="Input titles separated by a coma or 1 by 1"
           type="text"
           value={entry}
           onSubmit={() => {
@@ -107,13 +96,16 @@ export default function InputTitles() {
       )}
       {titles.length > 0 && (
         <ol className="list">
-          {titles.map((title: string) => {
-            return (
-              <li>
-                <p>{title}</p>
-              </li>
-            );
-          })}
+          {titles
+            .join(",")
+            .split(",")
+            .map((title: string) => {
+              return (
+                <li>
+                  <p>{title}</p>
+                </li>
+              );
+            })}
         </ol>
       )}
     </Fragment>

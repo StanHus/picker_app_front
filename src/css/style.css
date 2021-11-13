@@ -74,6 +74,7 @@ h1 {
 
 .button {
   background-color: white;
+  cursor: pointer;
 }
 
 ol {
@@ -123,6 +124,7 @@ li {
   animation-duration: 3s;
   animation-name: slidein;
   animation-iteration-count: 1;
+  cursor: pointer;
 }
 
 article {
@@ -179,6 +181,7 @@ a.button1 {
   text-align: center;
   transition: all 0.2s;
   font-size: 110%;
+  cursor: pointer;
 }
 
 #exit {
