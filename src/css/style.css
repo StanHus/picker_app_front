@@ -6,6 +6,7 @@ body {
   animation: scroll 70s linear infinite;
   background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"),
     #111111;
+  /* background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%); */
   color: #eee;
   min-height: 100vh;
   height: 100%;
