@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import "../css/style.css";
 import { useState, useEffect } from "react";
 import { put } from "./requests";
-import { getResult } from "./functions";
+import { getResult, shuffle } from "./functions";
 import Winner from "./Winner";
 
 export default function Game() {
@@ -24,7 +24,7 @@ export default function Game() {
         "https://dry-gorge-37048.herokuapp.com/titles"
       );
       const jsonData = await response.json();
-      setList(jsonData[0]["text"].split(","));
+      setList(shuffle(jsonData[0]["text"].split(",")));
       setId(jsonData[0]["id"]);
     } catch (err) {
       console.error(err);
@@ -40,8 +40,6 @@ export default function Game() {
     if (selected.length % 2 === 0 || selected.length === 1) {
       //condition under review
       let result = await getResult(list, selected);
-      console.log(result);
-      console.log(id);
       setTimeout(() => {
         put(result, id);
       }, 500);

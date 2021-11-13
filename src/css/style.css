@@ -168,7 +168,7 @@ input[type="checkbox"]:checked ~ div {
 a.button1 {
   padding: 0.5em;
   border: 0.1em solid #ffffff;
-  width: 10%;
+  width: 5rem;
   height: auto;
   border-radius: 0.12em;
   box-sizing: border-box;
@@ -178,7 +178,7 @@ a.button1 {
   color: #ffffff;
   text-align: center;
   transition: all 0.2s;
-  font-size: x-large;
+  font-size: 110%;
 }
 
 #exit {
