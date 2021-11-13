@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import "../../css/style.css";
+import "../css/style.css";
 import ShowConfetti from "./Confetti";
 
 export default function Winner({ winner }: any) {

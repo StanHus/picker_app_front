@@ -3,7 +3,7 @@ import "../../css/style.css";
 import { useState, useEffect } from "react";
 import { put } from "./requests";
 import { checkSubmission, getResult, shuffle } from "./functions";
-import Winner from "./Winner";
+import Winner from "../Winner";
 
 export default function Game() {
   const [list, setList] = useState<string[]>([]);
@@ -66,38 +66,36 @@ export default function Game() {
             Submit Choices
           </a>
         }
-        <div>
-          {
-            // eslint-disable-next-line
-            list.map((_, index) => {
-              if (index === 0 || index % 2 === 0) {
-                return (
-                  <section className="checkboxes">
-                    <article className="feature">
-                      <input
-                        onChange={() => handleChange(index)}
-                        type="checkbox"
-                      />
-                      <div>
-                        <span>{list[index]}</span>
-                      </div>
-                    </article>
+        {
+          // eslint-disable-next-line
+          list.map((_, index) => {
+            if (index === 0 || index % 2 === 0) {
+              return (
+                <section className="checkboxes">
+                  <article className="feature">
+                    <input
+                      onChange={() => handleChange(index)}
+                      type="checkbox"
+                    />
+                    <div>
+                      <span>{list[index]}</span>
+                    </div>
+                  </article>
 
-                    <article className="feature">
-                      <input
-                        onChange={() => handleChange(index + 1)}
-                        type="checkbox"
-                      />
-                      <div>
-                        <span>{list[index + 1]}</span>
-                      </div>
-                    </article>
-                  </section>
-                );
-              }
-            })
-          }
-        </div>
+                  <article className="feature">
+                    <input
+                      onChange={() => handleChange(index + 1)}
+                      type="checkbox"
+                    />
+                    <div>
+                      <span>{list[index + 1]}</span>
+                    </div>
+                  </article>
+                </section>
+              );
+            }
+          })
+        }
       </Fragment>
     );
   }

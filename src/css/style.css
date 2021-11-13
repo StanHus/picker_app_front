@@ -135,15 +135,17 @@ li {
   margin-left: 2%;
   border: 5px solid;
 }
+
 .checkboxes {
-  width: 113%;
+  width: 100%;
   display: flex;
   flex-flow: row;
   flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 .feature {
-  width: 40%;
+  width: 110%;
   margin-right: 5%;
 }
 

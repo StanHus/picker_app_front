@@ -20,7 +20,7 @@ export default function Landing() {
           >
             Input
           </a>{" "}
-          the 32 candidates and then pick the best out of each pair!
+          the candidates and then pick the best out of each pair!
         </p>
       </div>
     </Fragment>
