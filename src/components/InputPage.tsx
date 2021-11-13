@@ -35,7 +35,7 @@ export default function InputTitles() {
       setAdd(nearestBiggestPowOf2(entries.length) - entries.length + 1);
       setTimeout(() => {
         setAlert(true);
-      }, 1000);
+      }, 500);
     }
   };
 
@@ -82,16 +82,28 @@ export default function InputTitles() {
         {titles.length > 0 && (
           // eslint-disable-next-line
           <a
-            onClick={() => setTitles(() => titles.slice(0, titles.length - 1))}
+            onClick={() =>
+              setTitles(() =>
+                titles
+                  .join(",")
+                  .split(",")
+                  .slice(0, titles.join(",").split(",").length - 1)
+              )
+            }
             className="button1"
           >
             Undo
           </a>
         )}
       </div>
-      {alert && (
+      {alert && titles.join(",").split(",").length > 4 && (
         <h2 style={{ fontSize: "xx-large", textAlign: "center" }}>
           Not a good number remove {remove} or add {add} entires
+        </h2>
+      )}
+      {alert && titles.join(",").split(",").length <= 4 && (
+        <h2 style={{ fontSize: "xx-large", textAlign: "center" }}>
+          Not a good number, add more entires
         </h2>
       )}
       {titles.length > 0 && (

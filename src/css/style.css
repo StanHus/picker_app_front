@@ -1,10 +1,38 @@
 body {
   margin: 0;
+}
+
+.background {
+  animation: scroll 70s linear infinite;
+  background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"),
+    #111111;
+  color: #eee;
+  min-height: 100vh;
   height: 100%;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  background-color: rgb(236, 188, 125);
+  min-width: 360px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+@keyframes scroll {
+  100% {
+    background-position: 0px -3000px;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .background {
+    animation: scroll 200s linear infinite;
+  }
+}
+
+@media (min-width: 670px) {
+  .title {
+    font-size: 5rem;
+  }
 }
 
 /* 
@@ -26,7 +54,6 @@ Landing Page Section Start
 .landing-body {
   width: 80%;
   margin-left: 10%;
-  margin-top: 10%;
 }
 
 h1 {
@@ -108,11 +135,10 @@ li {
   border: 5px solid;
 }
 .checkboxes {
-  width: 60%;
-  margin-left: 20%;
+  width: 113%;
   display: flex;
   flex-flow: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .feature {
@@ -122,6 +148,7 @@ li {
 
 .checkboxes i {
   animation-duration: 3s;
+  height: 80%;
   animation-name: slidein;
   animation-iteration-count: 1;
   cursor: pointer;
@@ -129,10 +156,11 @@ li {
 
 article {
   position: relative;
-  height: 15vh;
+  height: 10vh;
   font-size: x-large;
   margin: 1vh;
-  float: left;
+  float: center;
+  background-color: #004e6d;
   border: 4px solid #002538;
   box-sizing: border-box;
 }
@@ -157,8 +185,8 @@ article input {
 }
 
 input[type="checkbox"]:checked ~ div {
-  background-color: #013a57;
-  color: #fff;
+  background-color: #f8fdff;
+  color: black;
 }
 
 /* Titles section end
@@ -185,7 +213,7 @@ a.button1 {
 }
 
 #exit {
-  width: auto;
+  width: 100%;
   display: block;
   text-align: center;
   padding: 2em 7em;

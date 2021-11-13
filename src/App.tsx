@@ -6,7 +6,7 @@ import "./css/style.css";
 
 export default function App() {
   return (
-    <div className="body">
+    <div className="background">
       <BrowserRouter>
         <main>
           <Switch>

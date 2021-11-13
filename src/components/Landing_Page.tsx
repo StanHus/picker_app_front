@@ -9,10 +9,7 @@ export default function Landing() {
         <p className="subTitle">
           Ok, so I love the process of elimination. I also love empirically
           finding out what which song/episode/character I really think is best.
-          Thats why I created this app to simplify the process!
-          <br />
-          <br />
-          Just{" "}
+          Thats why I created this app to simplify the process! Just{" "}
           <a
             style={{
               textDecoration: "none",
