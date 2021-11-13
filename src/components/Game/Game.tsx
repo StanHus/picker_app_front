@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import "../../css/style.css";
 import { useState, useEffect } from "react";
-import { put } from "./requests";
+import { put, get } from "./requests";
 import { checkSubmission, getResult, shuffle } from "./functions";
 import Winner from "../Winner";
 
@@ -19,16 +19,9 @@ export default function Game() {
   };
 
   const getTitles = async () => {
-    try {
-      const response = await fetch(
-        "https://dry-gorge-37048.herokuapp.com/titles"
-      );
-      const jsonData = await response.json();
-      setList(shuffle(jsonData[0]["text"].split(",")));
-      setId(jsonData[0]["id"]);
-    } catch (err) {
-      console.error(err);
-    }
+    const data = await get();
+    setList(shuffle(data["text"].split(",")));
+    setId(data["id"]);
   };
 
   useEffect(() => {
@@ -36,7 +29,11 @@ export default function Game() {
   }, []);
 
   const handleSubmit = async () => {
-    if (checkSubmission(selected)) {
+    if (
+      list.length / selected.length === 2 &&
+      checkSubmission(selected) &&
+      selected.length > 0
+    ) {
       let result = await getResult(list, selected);
       setTimeout(() => {
         put(result, id);
@@ -57,7 +54,7 @@ export default function Game() {
       <Fragment>
         {alert && (
           <h2 style={{ fontSize: "xx-large", textAlign: "center" }}>
-            Choose wisely (read correctly)
+            Choose wisely (<i>read</i> correctly)
           </h2>
         )}
         {

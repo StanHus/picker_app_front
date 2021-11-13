@@ -53,8 +53,7 @@ Landing Page Section Start
 }
 
 .landing-body {
-  width: 80%;
-  margin-left: 10%;
+  width: 70vw;
 }
 
 h1 {
@@ -65,6 +64,7 @@ h1 {
 
 .subTitle {
   margin-top: 10%;
+
   font-size: x-large;
   color: white;
   text-align: center;

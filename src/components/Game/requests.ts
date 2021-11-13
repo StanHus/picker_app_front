@@ -27,4 +27,16 @@ const post = async (titles: string) => {
   }
 };
 
-export { put, post };
+const get = async () => {
+  try {
+    const response = await fetch(
+      "https://dry-gorge-37048.herokuapp.com/titles"
+    );
+    const jsonData = await response.json();
+    return jsonData[0];
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export { put, post, get };
