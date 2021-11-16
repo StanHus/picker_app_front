@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Game from "./components/Game/Game";
 import InputTitles from "./components/InputPage";

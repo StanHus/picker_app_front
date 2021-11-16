@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import "../css/style.css";
-import "../css/style.scss";
 
 export default function Landing() {
   return (
